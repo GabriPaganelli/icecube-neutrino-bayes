@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+type: software
+title: "icecube-neutrino-bayes"
+authors:
+  - family-names: "Paganelli"
+    given-names: "Gabriele"
+abstract: >
+  Bayesian classification of ~880k IceCube neutrino events (10-year
+  point-source sample) as astrophysical vs. atmospheric, using truncated
+  power-law energy spectra and Gaussian spatial proximity weights relative
+  to 110 known source candidates. Three Stan models are compared.
+license: MIT
+repository-code: "https://github.com/GabriPaganelli/icecube-neutrino-bayes"
+keywords:
+  - IceCube
+  - neutrino
+  - Bayesian inference
+  - Stan
+  - astrophysical neutrinos
+  - point sources
+references:
+  - type: article
+    title: "Time-integrated Neutrino Source Searches with 10 years of IceCube Data"
+    authors:
+      - name: "IceCube Collaboration"
+    journal: "Physical Review Letters"
+    volume: 124
+    issue: 5
+    year: 2020
+    doi: "10.1103/PhysRevLett.124.051103"
