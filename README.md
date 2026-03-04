@@ -64,17 +64,17 @@ icecube-neutrino-bayes/
 │   ├── 01_import.R           # Load raw CSV data
 │   ├── 02_preprocess.R       # Clean + EDA + spatial weights
 │   ├── 03_fit_model1.R       # MCMC fit — Model 1  [~8h]
-│   ├── 04_fit_models23.R     # MCMC fit — Models 2 & 3  [~7h]
+│   ├── 04_fit_models23.R     # MCMC fit — Models 2 & 3  [~7h each]
 │   ├── 05_posteriors.R       # Stage 2 spatial combination
 │   └── 06_plots.R            # All figures
 │
 └── output/
-    ├── figures/              # Generated PDFs
-    ├── data.rds              # Cleaned events + spatial weights
-    ├── sources.rds           # Source catalogue
-    ├── icecube_all.rds       # Raw combined events
-    ├── fit_model1/2/3.rds    # Stan fit objects (~2 MB each)
-    ├── gamma_model1/2/3.rds  # Energy-only posteriors
+    ├── figures/                 # Generated PDFs
+    ├── data.rds                 # Cleaned events + spatial weights
+    ├── sources.rds              # Source catalogue
+    ├── icecube_all.rds          # Raw combined events
+    ├── fit_model1/2/3.rds       # Stan fit objects (~2 MB each)
+    ├── gamma_model1/2/3.rds     # Energy-only posteriors
     └── gamma_star_model2/3.rds  # Final combined posteriors
 ```
 
@@ -111,15 +111,15 @@ source("R/05_posteriors.R")   # spatial-energy combination
 source("R/06_plots.R")        # all figures → output/figures/
 ```
 
-### Full reproduction (~15 hours)
+### Full reproduction (~22 hours)
 
 ```r
 source("R/01_import.R")        # load raw CSVs          → output/icecube_all.rds
 source("R/02_preprocess.R")    # clean + spatial weights → output/data.rds
 
 # Steps 3 and 4 are independent and can be run in separate R sessions:
-source("R/03_fit_model1.R")    # ~8h  — Model 1
-source("R/04_fit_models23.R")  # ~7h  — Models 2 & 3
+source("R/03_fit_model1.R")    # ~8h       — Model 1
+source("R/04_fit_models23.R")  # ~7h each  — Models 2 & 3
 
 source("R/05_posteriors.R")    # spatial combination for Models 2 & 3
 source("R/06_plots.R")         # all figures
@@ -133,7 +133,7 @@ Run all scripts from the repository root.
 
 | Figure | Content |
 |---|---|
-| `output/figures/map.pdf` | Sky map: top-10% events (Model 1) overlaid on source positions |
+| `output/figures/map.pdf` | Sky map: top-5% events (Model 1) overlaid on source positions |
 | `output/figures/diagnostics.pdf` | MCMC trace, density, ACF for all three models |
 | `output/figures/posteriors.pdf` | Parameter comparison + prior/posterior overlay |
 | `output/figures/ppc_model1.pdf` | Posterior predictive checks (Model 1) |
