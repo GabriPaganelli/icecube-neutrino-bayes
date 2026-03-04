@@ -30,7 +30,7 @@ Three competing Bayesian models are fitted via MCMC (Stan):
 
 Spatial weight for event *i*:
 
-$$w_i = \frac{1}{\max_j w_j} \sum_{j=1}^{110} \exp\!\left(-\frac{\theta_{ij}^2}{2\,\sigma_{\text{eff},j}^2}\right)$$
+$$w_i = \frac{1}{\bar{w_j}} \sum_{j=1}^{110} \exp \left(-\frac{\theta_{ij}^2}{2 \sigma_{\text{eff},j}^2}\right)$$
 
 where $\sigma_{\text{eff}}^2 = \sigma_{\text{meas}}^2 + \sigma_{\text{src}}^2$.
 
