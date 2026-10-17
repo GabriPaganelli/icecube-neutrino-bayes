@@ -1,16 +1,17 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite it as below."
 type: software
-title: "icecube-neutrino-bayes"
+title: "IceCube Neutrino Clustering and Source Modeling"
 authors:
   - family-names: "Paganelli"
     given-names: "Gabriele"
 abstract: >
-  Bayesian classification of ~880k IceCube neutrino events (10-year
-  point-source sample) as astrophysical vs. atmospheric, using truncated
+  Bayesian classification of ~880k IceCube neutrino events (IC86 seasons
+  2011–2018 of the 10-year point-source sample) as astrophysical vs. atmospheric, using truncated
   power-law energy spectra and Gaussian spatial proximity weights relative
   to 110 known source candidates. Three Stan models are compared.
 license: MIT
+date-released: "2026-02-27"
 repository-code: "https://github.com/GabriPaganelli/icecube-neutrino-bayes"
 keywords:
   - IceCube

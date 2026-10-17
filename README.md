@@ -1,9 +1,15 @@
-# icecube-neutrino-bayes
+# IceCube Neutrino Clustering and Source Modeling
+
+[Report (PDF)](icecube_report.pdf) · [Project page](https://gabripaganelli.github.io/projects/icecube.html)
+
+![Sky map of high-probability astrophysical events and candidate sources](figures/icecube_sky_map.png)
+*Sky map: top 10% events by astrophysical posterior probability (Model 1) and the 110 candidate sources*
 
 ## Overview
 
 University project applying Bayesian inference to the classification of ~880,000
-IceCube muon-neutrino events from the 10-year point-source sample (2008–2018)
+IceCube muon-neutrino events from the IC86 seasons (2011–2018) of the 10-year
+point-source sample (2008–2018)
 as **astrophysical** vs. **atmospheric** in origin. Three Stan models are compared,
 combining truncated power-law energy spectra with Gaussian spatial proximity
 weights relative to 110 known source candidates.
@@ -48,12 +54,12 @@ icecube-neutrino-bayes/
 ├── LICENSE
 ├── CITATION.cff
 ├── icecube_report.pdf
+├── figures/                  # Sky map image (README)
 │
 ├── data/
 │   ├── raw/                  # IC86 I–VII event CSV files (~91 MB total)
 │   ├── sources.txt           # 110-source catalogue
-│   ├── data_readme.txt       # IceCube data format documentation
-│   └── icecube_2020_prl.pdf  # IceCube Collaboration, PRL 124 (2020)
+│   └── data_readme.txt       # IceCube data format documentation
 │
 ├── stan/
 │   ├── model_spatial.stan    # Model 1
@@ -131,9 +137,14 @@ Run all scripts from the repository root.
 
 ## Results
 
+**Main results** (from the report's conclusions):
+- Spectral degeneracy: the astrophysical and atmospheric power-law indices collapse to nearly identical values (≈ 1.12 in Models 2–3; 1.22 vs 1.12 in Model 1), so energy does not discriminate between the two classes
+- Event-level classification is therefore driven almost entirely by angular proximity to the 110 candidate sources
+- With energy uninformative, the astrophysical fraction π_astro is not identified and follows the prior: 0.00247 (M1), 0.0417 (M2), 0.3732 (M3)
+
 | Figure | Content |
 |---|---|
-| `output/figures/map.pdf` | Sky map: top-5% events (Model 1) overlaid on source positions |
+| `output/figures/map.pdf` | Sky map: top-10% events (Model 1) overlaid on source positions |
 | `output/figures/diagnostics.pdf` | MCMC trace, density, ACF for all three models |
 | `output/figures/posteriors.pdf` | Parameter comparison + prior/posterior overlay |
 | `output/figures/ppc_model1.pdf` | Posterior predictive checks (Model 1) |
@@ -141,10 +152,14 @@ Run all scripts from the repository root.
 
 **Data reference:** IceCube Collaboration, *Time-integrated Neutrino Source Searches
 with 10 years of IceCube Data*, Phys. Rev. Lett. **124**, 051103 (2020).
-[DOI: 10.1103/PhysRevLett.124.051103](https://doi.org/10.1103/PhysRevLett.124.051103)
+[DOI: 10.1103/PhysRevLett.124.051103](https://doi.org/10.1103/PhysRevLett.124.051103) · [arXiv:1910.08488](https://arxiv.org/abs/1910.08488)
+
+**Data:** IceCube public data release *All-sky point-source IceCube data: years 2008–2018*
+([DOI: 10.21234/sxvs-mt83](https://doi.org/10.21234/sxvs-mt83)), CC0 1.0.
+`data/sources.txt` reproduces Table III of the paper. The MIT license covers the code only.
 
 ---
 
 ## Author
 
-**Gabriele Paganelli** — Academic Portfolio
+**Gabriele Paganelli** — University of Padova / Boston University
