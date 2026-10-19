@@ -1,6 +1,6 @@
 # IceCube Neutrino Clustering and Source Modeling
 
-[Report (PDF)](icecube_report.pdf) · [Project page](https://gabripaganelli.github.io/projects/icecube.html)
+[Report (PDF)](report.pdf) · [Project page](https://gabripaganelli.github.io/projects/icecube.html)
 
 ![Sky map of high-probability astrophysical events and candidate sources](figures/icecube_sky_map.png)
 *Sky map: top 10% events by astrophysical posterior probability (Model 1) and the 110 candidate sources*
@@ -53,7 +53,7 @@ icecube-neutrino-bayes/
 ├── README.md
 ├── LICENSE
 ├── CITATION.cff
-├── icecube_report.pdf
+├── report.pdf
 ├── figures/                  # Sky map image (README)
 │
 ├── data/
